@@ -18,6 +18,7 @@ For(J,1,N)
 For(I,N,J,-1)
 
 (L₃(I)-L₃(I-1))/(L₁(I)-L₁(I-J))→L₃(I)
+
 End
 End
 
