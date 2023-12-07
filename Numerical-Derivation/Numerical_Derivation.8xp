@@ -1,11 +1,12 @@
-
-Menu("Numerical Derivation","Richardson's Extrapolation",A,"Iterative Integration",B,"Quit",C)
-
-Lbl A
 Disp "Give the function in Y₁"
 Input "Number of iterations: ",N
 Input "Step size: ",H
 Input "Point of evaluation: ",X
+Menu("Numerical Derivation","Richardson's Extrapolation",A,"Iterative Integration",B,"Quit",C)
+
+Lbl A
+"Add Acceptable Error"
+"Add Actual Derivative"
 
 {N,N}→dim([A])
 
@@ -32,21 +33,15 @@ End
 Goto C
 
 Lbl B
-Disp "Give the function in Y₁"
-Input "Number of iterations: ",N
-Input "Step size: ",H
-Input "Point of evaluation: ",X
 
-
-For(I,0,N)
+For(I,0,N-1)
 H/(2^I)→D
-Disp D
 Disp "Y(X+D)",Y₁(X+D)
 Disp "Y(X-D)",Y₁(X-D)
 
 ((Y₁(X+D))-(Y₁(X-D)))/(2*D)→M
 
-Disp "Iteration",I
+Disp "Iteration",I+1
 Disp "H/2^I",D
 Pause M
 
