@@ -7,29 +7,27 @@ Input "Number of iterations: ",N
 Input "Step size: ",H
 Input "Point of evaluation: ",X
 
-N→dim([A])
+{N,N}→dim([A])
 
 For(I,1,N)
 For(J,1,I)
-If J=0
+
+If J=1
 Then
 H/(2^I)→D
 (Y₁(X+D)-Y₁(X-D))/(2*D)→[A](I,J)
 Else
-[A](I,J-1)+(([A](I,J-1)-[A](I-1,J-1))/(4^J-1))→[A](I,J)
+[A](I,J-1)+(([A](I,J-1)-[A](I-1,J-1))/(4^J))→[A](I,J)
 End
 
-If I=J
-Then
-Disp [A](I,J)
-End
+Output(10,9,I-1)
+Output(10,10,", ")
+Output(10,11,J-1)
+Output(10,13,[A](I,J))
+Pause ""
 
 End
 End
-
-[A](N,N)→F
-Disp F
-Pause
 
 Goto C
 
