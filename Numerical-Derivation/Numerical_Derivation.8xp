@@ -1,5 +1,5 @@
 
-Menu("Richardson's Extrapolation","Richardson's Extrapolation",A,"Iterative Integration",B,"Quit",C)
+Menu("Numerical Derivation","Richardson's Extrapolation",A,"Iterative Integration",B,"Quit",C)
 
 Lbl A
 Disp "Give the function in Y₁"
