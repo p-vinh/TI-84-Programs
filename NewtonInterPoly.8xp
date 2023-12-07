@@ -16,8 +16,8 @@ For(I,1,N)
 L₂(I)→L₃(I)
 End
 
-For(J,2,N)
-For(I,N,J,­-1)
+For(J,1,N)
+For(I,N,J+1,­1)
 
 (L₃(I)-L₃(I-1))/(L₁(I)-L₁(I-J))→L₃(I)
 End
@@ -33,14 +33,15 @@ Disp "Enter the list of coefficients:"
 Prompt L₃
 Disp "Enter the x value to evaluate:"
 Prompt Z
-dim(L1)→N
+
+dim(L₁)→N
 L₃(N-1)→M
 
-For(I,(N-1),1,­-1)
-M*(Z-L₁(I)+L₃(I))→M
+For(I,(N-1),1,­1)
+M*(Z-L₁(I))+L₃(I)→M
 End
 
-Output(1,1,M)
+Disp M
 
 Lbl C
 Stop
