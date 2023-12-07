@@ -2,14 +2,13 @@ Disp "Give the function in Y₁"
 Input "Number of iterations: ",N
 Input "Lower limit(A): ",A
 Input "Upper limit(B): ",B
+fnInt(Y₁,X,A,B)→C
+Disp "The (actual) integral is: "
+Pause C
 
 Menu("Numerical Integration","Trapzoid Method",A,"Romberg's Method",B,"Quit",C)
 
 Lbl A
-
-fnInt(Y₁,X,A,B)→C
-Disp "The (actual) integral is: "
-Pause C
 
 A→O
 B→P
@@ -49,8 +48,8 @@ B-A→H
 ((Y₁(A)+Y₁(B))/2)*H→[A](1,1)
 
 Disp ""
-Output(9,9,"0,0")
-Output(9,13,[A](1,1))
+Output(9,7,"0,0")
+Output(9,11,[A](1,1))
 Pause ""
 
 For(I,2,N)
@@ -65,10 +64,10 @@ Else
 [A](I,J-1)+([A](I,J-1)-[A](I-1,J-1))/(4^(J-1)-1)→[A](I,J)
 End
 
-Output(9,9,I-1)
-Output(9,10,", ")
-Output(9,11,J-1)
-Output(9,13,[A](I,J))
+Output(9,7,I-1)
+Output(9,8,", ")
+Output(9,9,J-1)
+Output(9,11,[A](I,J))
 Pause ""
 
 End
