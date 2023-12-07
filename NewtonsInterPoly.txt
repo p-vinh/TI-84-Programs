@@ -3,22 +3,23 @@ Menu("Newton's Interpolation Polynomial","Coefficient of Binomial Expansion",A,"
 "Coefficients of Binomial Expansion"
 Lbl A
 "xs L₁"
-Input("Enter the x's of the points:",L₁)
+Disp "Enter the x's of the points:"
+Prompt L₁
 
 "ys L₂"
-Input("Enter the y's of the points:",L₂)
-dim(L1)→N
+Disp "Enter the y's of the points:"
+Prompt L₂
+dim(L₁)→N
 "L₃ will have cs(coefficient of binomial expansion)"
 
-For(I,0,N)
+For(I,1,N)
 L₂(I)→L₃(I)
 End
 
-For(J,1,N)
-For(I,N,J,-1)
+For(J,2,N)
+For(I,N,J,­-1)
 
 (L₃(I)-L₃(I-1))/(L₁(I)-L₁(I-J))→L₃(I)
-
 End
 End
 
@@ -26,13 +27,16 @@ Goto C
 
 "Eval Newton's Interpolation Polynomial"
 Lbl B
-Input("Enter the List of x's:",L₁)
-Input("Enter the list of coefficients:",L₃)
-Input("Enter the x value to evaluate:",Z)
+Disp "Enter the List of x's:"
+Prompt L₁
+Disp "Enter the list of coefficients:"
+Prompt L₃
+Disp "Enter the x value to evaluate:"
+Prompt Z
 dim(L1)→N
 L₃(N-1)→M
 
-For(I,(N-1),0,-1)
+For(I,(N-1),1,­-1)
 M*(Z-L₁(I)+L₃(I))→M
 End
 
