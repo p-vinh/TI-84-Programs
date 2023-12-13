@@ -15,11 +15,22 @@ dim(L₁)→N
 For(I,1,N)
 L₂(I)→L₃(I)
 End
-
+1→P
+1→O
 For(J,1,N)
 For(I,N,J+1,­1)
 
 (L₃(I)-L₃(I-1))/(L₁(I)-L₁(I-J))→L₃(I)
+ClrHome
+Output(P,O,"L₃(I)-L₃(I-1)")
+Output(P,15,L₃(I)-L₃(I-1))
+
+Output(P+1,O,"L₁(I)-L₁(I-J)")
+Output(P+1,15,L₁(I)-L₁(I-J))
+
+Output(P+2,O,"L₃(I)")
+Output(P+2,7,L₃(I))
+Pause ""
 End
 End
 
@@ -35,9 +46,10 @@ Disp "Enter the x value to evaluate:"
 Prompt Z
 
 dim(L₁)→N
-L₃(N-1)→M
+L₃(N)→M
 
-For(I,(N-1),1,­1)
+
+For(I,N-1,1,­1)
 M*(Z-L₁(I))+L₃(I)→M
 End
 
